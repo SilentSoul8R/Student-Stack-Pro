@@ -105,6 +105,7 @@ def test_backup_roundtrip():
     st_new: dict = {}
     assert "Writer's Desk document" in backup.apply(st_new, data)
     assert st_new["doc_text"] == "hello"
+<<<<<<< HEAD
 
 
 def test_scrub_hides_keys():
@@ -113,3 +114,5 @@ def test_scrub_hides_keys():
     out = llm.scrub("boom gsk_abcdefghij1234567890 and gsk_zzzzzzzzzzzzzzzz")
     assert "gsk_" not in out
     llm.st.session_state.pop("user_key", None)
+=======
+>>>>>>> 59511f36a8fa45a6c79ff526e281d24485767581

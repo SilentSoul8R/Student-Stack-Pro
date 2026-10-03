@@ -10,6 +10,9 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt pytest
+<<<<<<< HEAD
       - run: python scripts/check_secrets.py
+=======
+>>>>>>> 59511f36a8fa45a6c79ff526e281d24485767581
       - run: python scripts/check_env.py
       - run: python -m pytest -q
