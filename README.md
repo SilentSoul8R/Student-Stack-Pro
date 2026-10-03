@@ -34,8 +34,6 @@ Get a free key at <https://console.groq.com>, paste it in **AI settings** (sideb
 * CrewAI telemetry/tracing is disabled in code.
 * **Public deployments:** do *not* put your own key in secrets unless you accept strangers spending your quota. Either leave it unset (each visitor pastes their own key) or set `REQUIRE_USER_KEY = "true"`.
 
-
-=======
 ## 🚀 Deploy from GitHub (Streamlit Community Cloud)
 1. Push this folder to a GitHub repo (`git init && git add . && git commit -m "init" && git push`). Check `git status` shows no `.env`/`secrets.toml`.
 2. Go to <https://share.streamlit.io> → **New app** → pick the repo, branch `main`, file `app.py`.
@@ -61,11 +59,11 @@ tests/                 offline unit tests (no API key needed)
 * Groq's free tier has token-per-minute limits; the app retries on rate limits. Use `llama-3.1-8b-instant` for speed, `llama-3.3-70b-versatile` for quality. Model ids can change — use **Custom…** in AI settings.
 * Scanned PDFs/images need OCR, which isn't included. PDF resumes use standard Latin fonts.
 * If you use CrewAI ≥ 1.0, install `pip install "crewai[litellm]"` (Groq goes through LiteLLM) and re-run `check_env.py`.
-<<<<<<< HEAD
+
 * AI output can be wrong — review before sending or submitting.
-=======
+
 * AI output can be wrong so please review before sending or submitting.
->>>>>>> 59511f36a8fa45a6c79ff526e281d24485767581
+
 
 ## Tests
 `pip install pytest && pytest -q` (offline; covers scheduler, retrieval, text checks, resume PDF/DOCX).
