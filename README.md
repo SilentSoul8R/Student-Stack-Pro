@@ -34,11 +34,9 @@ Get a free key at <https://console.groq.com>, paste it in **AI settings** (sideb
 * CrewAI telemetry/tracing is disabled in code.
 * **Public deployments:** do *not* put your own key in secrets unless you accept strangers spending your quota. Either leave it unset (each visitor pastes their own key) or set `REQUIRE_USER_KEY = "true"`.
 
-<<<<<<< HEAD
-## 🚀 Deploy from GitHub (Streamlit Community Cloud — free)
+
 =======
 ## 🚀 Deploy from GitHub (Streamlit Community Cloud)
->>>>>>> 59511f36a8fa45a6c79ff526e281d24485767581
 1. Push this folder to a GitHub repo (`git init && git add . && git commit -m "init" && git push`). Check `git status` shows no `.env`/`secrets.toml`.
 2. Go to <https://share.streamlit.io> → **New app** → pick the repo, branch `main`, file `app.py`.
 3. **Advanced settings → Python version: 3.11.**
