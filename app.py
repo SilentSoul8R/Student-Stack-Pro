@@ -5,7 +5,15 @@ import streamlit as st
 
 st.set_page_config(page_title="Student Stack Pro", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 
-from core import backup, llm, ui  # noqa: E402  (must come after set_page_config)
+try:
+    from core import backup, llm, ui  # noqa: E402  (must come after set_page_config)
+except Exception as _exc:  # noqa: BLE001  - Streamlit redacts import errors; show file/line (never secrets)
+    import sys
+    st.error(f"Startup error: {type(_exc).__name__} in {getattr(_exc, 'filename', None) or 'an imported module'}, "
+             f"line {getattr(_exc, 'lineno', '?')}: {getattr(_exc, 'msg', None) or str(_exc)[:200]}")
+    st.code((getattr(_exc, "text", None) or "").strip() or "(no source line available)")
+    st.caption(f"Running on Python {sys.version.split()[0]}. This app needs Python 3.10 or newer.")
+    st.stop()
 
 PAGES = {
     "🏠 Home": (None, ""),
