@@ -46,15 +46,9 @@ def get_api_key() -> str:
 
 def scrub(msg: Any) -> str:
     text = str(msg)
-<<<<<<< HEAD
     for key in {(st.session_state.get("user_key") or "").strip(), _server_key()}:
         if key:
             text = text.replace(key, "[hidden]")
-=======
-    key = get_api_key()
-    if key:
-        text = text.replace(key, "[hidden]")
->>>>>>> 59511f36a8fa45a6c79ff526e281d24485767581
     return re.sub(r"gsk_[A-Za-z0-9]{10,}", "[hidden]", text)
 
 
